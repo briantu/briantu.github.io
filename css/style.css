@@ -14,13 +14,11 @@ html, body {
     z-index: 999999;
 }
 .spinner {
-    width: 60px;
-    height: 60px;
-    margin: 0;
+    width: 75px;
+    height: 75px;
     position: absolute;
-    top: 49%;
-    left: 49%;
-    transform: translate(-50%, -50%);
+    top: 48%;
+    left: 48%;
   
     border-radius: 100%;  
     -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;

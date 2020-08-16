@@ -23,14 +23,6 @@ function doSlideshow() {
 
 // Scrolling and colors
 $(document).ready(function () {
-    //Preloader
-    preloaderFadeOutTime = 2000;
-    function hidePreloader() {
-        var preloader = $('.spinner-wrapper');
-        preloader.fadeOut(preloaderFadeOutTime);
-    }
-    hidePreloader();
-    
     // get the anchor link buttons
     const menuBtn = $('.nav-link');
     // when each button is clicked
