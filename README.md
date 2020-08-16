@@ -1,2 +1,2 @@
-# briantu.github.io
-My personal website!
+# welcome to my personal website!
+# Access it through briantu.tech.
