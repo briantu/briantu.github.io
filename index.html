@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brian Tu's Personal Website">
+	<meta name="keywords" content="Brian Tu, Hacker, Computer Science, Software, Student, Portfolio, Internship">
+    <meta name="author" content="Brian Tu">
+    
+    <title>Brian Tu</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" id="favicon" href="img/favicons/favicon-0.ico?v=1"/>
+
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fe9d8060fe.js" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" id="color" href="css/color-0.css">
+
+</head>
+<body>
+    <div class="main-wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="side-container" id="menu-center">
+                <img class="img-thumbnail" src="img/pfp.jpg" alt="Profile picture">
+                <h1>Brian Tu</h1>
+                <p>Available for work</p>
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="fixed-top">
+            <div class="collapse" id="navbarToggleExternalContent">
+              <div class="bg-dark p-4" id="idk-menu-center">
+                <ul class="nav flex-column">
+                    <li class="nav-item" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item" data-toggle="collapse" data-target="#navbarToggleExternalContent">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <nav class="navbar navbar-dark bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+        </div>
+        <div class="sections-wrapper">
+            <!-- Sections-->
+            <!-- Home -->
+            <section class="home-area element-cover-bg slide-bg" id="home">
+                <div class="home-container">
+                    <h1>Brian <span>Tu</span></h1>
+                    <h4 class="cd-headline letters type">
+                        I'm a
+                        <span class="cd-words-wrapper">
+                            <b class="is-visible">Developer</b>
+                            <b>Hacker</b>
+                            <b>Guitarist</b>
+                            <b>Casual Athlete</b>
+                            <b>Maker</b>
+                        </span>
+                    </h4>
+                </div>
+                <a href="#about" data-scroll>
+                    <div class="home-mouse">
+                      <div class="mouse-shape">
+                        <div class="mouse-wheel"></div>
+                      </div>
+                    </div>
+                </a>
+            </section>
+            <!-- About -->
+            <section class="about-area" id="about">
+                <div class="about-container">
+                    <div class="section-header">
+                        <h2>About me</h2>
+                    </div>
+                    <div class="container">
+                        <!-- Max width -->
+                        <div class="row justify-content-md-center">
+                            <div class="about-img col-md-auto">
+                                <img class="img-thumbnail" src="img/about-pfp.jpg" alt="About profile picture">
+                            </div>
+                            <div class="about-text col">
+                                <div class="text-box">
+                                    <h2>Hi There!</h2>
+                                    <h6>I'm Brian Tu</h6>
+                                    <p class="about-desc">
+                                        I am an undergraduate student studying Computer Science at the University of Waterloo.
+                                        My interest in computer science came from hackathons that allowed me to realize 
+                                        the impact technology has to change the future. I strive to continue building and designing 
+                                        products through internships, side projects, and hackathons. When I'm not coding, you may 
+                                        find me biking or playing the guitar!
+                                    </p>
+                                    <p style="font-size: 15px; color: #555; font-weight: 700; padding: 27px 0; margin: 0;">
+                                        I am currently looking for internship and research opportunities! Feel free to contact me!
+                                    </p>
+                                    <a class="btn btn-primary" id="resume-btn" href="docs/Resume_Brian_Tu.pdf" target="_blank">See My Resume</a>
+                                    <a class="btn btn-primary" id="work-btn" href="#portfolio">My Work</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- max width 888 -->
+                        <div class="idk-container">
+                            <div class="about-img">
+                                <img class="img-thumbnail" src="img/pfp.jpg" alt="About profile picture">
+                            </div>
+                            <div class="about-text">
+                                <div class="text-box">
+                                    <h2>Hi There!</h2>
+                                    <h6>I'm Brian Tu</h6>
+                                    <p class="about-desc">
+                                        I am an undergraduate student studying Computer Science at the University of Waterloo.
+                                        My interest in computer science came from hackathons that allowed me to realize 
+                                        the impact technology has to change the future. I strive to continue building and designing 
+                                        products through internships, side projects, and hackathons. When I'm not coding, you may 
+                                        find me biking or playing the guitar!
+                                    </p>
+                                    <p style="font-size: 15px; color: #555; font-weight: 700; padding: 27px 0; margin: 0;">
+                                        I am currently looking for internship and research opportunities! Feel free to contact me!
+                                    </p>
+                                    <a class="btn btn-primary" id="resume-btn" href="docs/Resume_Brian_Tu.pdf" target="_blank">See My Resume</a>
+                                    <a class="btn btn-primary" id="work-btn" href="#portfolio">My Work</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio -->
+            <section class="portfolio-area" id="portfolio">
+                <div class="port-container">
+                    <div class="section-header">
+                        <h2>Portfolio</h2>
+                        <p>Hover to view description, Click for more info</p>
+                    </div>
+                </div>
+                <!-- Thumbnail list-->
+                <div class="portfolio-grid row">
+                    <!-- cpp/sld2 game -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://github.com/briantu/dungeon_platformer" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="C++ pixel game" src="img/port/cppgame.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">Dungeon Pixel Platformer</h6>
+                                    <p>
+                                        A platformer pixel game coded in C++ using SDL2. Collect the coins and avoid the traps!
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- credid item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://devpost.com/software/credid" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="CredID" src="img/port/credid.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">CredID</h6>
+                                    <p style="margin-bottom: 8px;">
+                                        A web app that gives those without identities an opportunity to address their financial needs
+                                        with a digital one.
+                                    </p>
+                                    <p class="winner">
+                                        &#9733 UofTHacks Winner!
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- mydudebot item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://devpost.com/software/mydudebot" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="MyDudeBot" src="img/port/mydudebot.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">MyDudeBot</h6>
+                                    <p>
+                                        A Keybase bot that provides a fun way for the public to learn about privacy and keep track
+                                        of what the Internet has about you.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- guitar item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://diyguitarkits.net/" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Brian Tu Signature Guitar" src="img/port/guitar.jpg">
+                                <div class="item-content">
+                                    <h6 class="content-title">Brian Tu Signature Guitar</h6>
+                                    <p>
+                                        I built my own electric guitar from a DIY strat kit from sanding it, to 
+                                        designing and painting it, to soldering the electronics in.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- terracycle item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://www.terracycle.com/en-CA" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="TerraCycle" src="img/port/terracycle.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">TerraCycle Canada Intern</h6>
+                                    <p>
+                                        Coded programs to help operations management organize data and facilitate jobs of warehouse workers 
+                                        in creating shipments labels. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- blg item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://github.com/briantu/BLGHackForChange" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="BLGHackForChange" src="img/port/said.png">
+                                <div class="item-content">
+                                    <h6 class="content-title"><span style="font-size: 20px;">$</span>Aid</h6>
+                                    <p>
+                                        A solution to humanitarian aid by using blockchain to prevent the corruption of money given to NGOs.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- schoolcentre item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://devpost.com/software/schoolcentre" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="SchoolCentre" src="img/port/schoolcentre.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">SchoolCentre</h6>
+                                    <p>
+                                        An all-in-one interactive platform for students to keep track of their assignments, grades, 
+                                        and future goals.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- wac item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="http://worldaffairs.ucc.on.ca/" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="World Affairs Conference" src="img/port/wac.jpg">
+                                <div class="item-content">
+                                    <h6 class="content-title">World Affars Conference</h6>
+                                    <p>
+                                        Canada's largest annual student-run current affairs conference connecting over 1000 students
+                                        with common interests in current affairs.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- python game item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://github.com/briantu/zombie_attack" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="python pixel game" src="img/port/pythongame.png">
+                                <div class="item-content">
+                                    <h6 class="content-title">Zombie Attack</h6>
+                                    <p>
+                                        A simple single-player pixel game coded in python using arcade. Don't let the zombie toasts kill you!
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- spirit band item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://www.ucc.on.ca/arts/music" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Rock band" src="img/port/spiritband.jpg">
+                                <div class="item-content">
+                                    <h6 class="content-title">Rock Band</h6>
+                                    <p>
+                                        Guitarist of the school rock band. We perform for various events such as 
+                                        homecoming and assemblies. 
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- ping pong item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://www.ucc.on.ca/student-life/activities" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="Ping pong" src="img/port/pingpong.jpg">
+                                <div class="item-content">
+                                    <h6 class="content-title">Ping Pong</h6>
+                                    <p>
+                                        Head of school ping pong club. We have ping pong tournaments, club meetings, and
+                                        a new system allowing students to play anytime.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- robotics item -->
+                    <div class="single-item col-6 col-lg-4">
+                        <a class="portfolio-item" href="https://www.vexrobotics.com/" target="_blank">
+                            <div class="portfolio-wrapper">
+                                <img class="img-fluid" alt="VEX Robotics" src="img/port/robotics.jpg">
+                                <div class="item-content">
+                                    <h6 class="content-title">VEX Robotics</h6>
+                                    <p>
+                                        Robot that can intake balls and shoot them at a target.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact -->
+            <section class="contact-area" id="contact">
+                <div class="contact-container">
+                    <div class="section-header">
+                        <h2>Get in Touch</h2>
+                        <p>Feel free to contact me</p>
+                    </div>
+                    <div class="row contact-info">
+                        <div class="col-12 col-sm-4">
+                            <div class="single-info">
+                                <i class="info-icon fas fa-phone-alt"></i>
+                                <p class="info-content">
+                                    Phone<br>
+                                    <a href="tel:+16475398988">+1 647 539 8988</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="single-info">
+                                <i class="info-icon fas fa-envelope"></i>
+                                <p class="info-content">
+                                    Email<br>
+                                    <a href="mailto:brianptu2@gmail.com">brianptu2@gmail.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4">
+                            <div class="single-info">
+                                <i class="info-icon fas fa-map-marker-alt" style="font-size: 28px; padding: 13.5px 17px;"></i>
+                                <p class="info-content">
+                                    Location<br>
+                                    <a href="https://goo.gl/maps/A5CBm19cRyWQYp479" target="_blank">Toronto, ON, Canada</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-wrapper">
+                            <a class="fab fa-facebook-f" href="https://www.facebook.com/brian.tu.9081" target="_blank"></a>
+                            <a class="fab fa-instagram" href="https://www.instagram.com/bptu_/" target="_blank"></a>
+                            <a class="fab fa-linkedin-in" href="https://www.linkedin.com/in/brianptu/" target="_blank"></a>
+                            <a class="fab fa-google" href="mailto:brianptu2@gmail.com" target="_blank"></a>
+                            <a class="fab fa-github" href="https://github.com/briantu" target="_blank"></a>
+                            <a class="fab fa-dev" href="https://devpost.com/brianptu" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="footer-area">
+                <div class="footer-container">
+                    <p class="alignleft">
+                        Copyright &copy; 2020 Brian Tu
+                    </p>
+                    <p class="aligncenter">
+                        Last Updated Aug 2020
+                    </p>
+                    <p class="alignright">
+                        Made by Brian Tu, on <a class="fab fa-github"></a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
