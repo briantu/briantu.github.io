@@ -3,6 +3,46 @@ html, body {
     height: 100%;
     width: 100%;
 }
+/* Preloader */
+.spinner-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    z-index: 999999;
+}
+.spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    position: absolute;
+    top: 49%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+  
+    border-radius: 100%;  
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+@-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+}
+@keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+}
 
 /* Side bar CSS below*/
 .fixed-top {
@@ -83,9 +123,11 @@ html, body {
     background-size: cover;
     background-repeat: no-repeat;
     backface-visibility: hidden;
-    animation: slideBg 60s linear;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
     animation-timing-function: ease-in;
-    transition: 2s;
+    transition: 1.5s;
 }
 .home-container {
     color: white;
@@ -535,6 +577,27 @@ html, body {
     }
 }
 @media screen and (max-width: 630px) {
+    .about-container .section-header h2 {
+        padding: 0 18px;
+    }
+    .about-container {
+        padding: 75px 20px 80px 20px;
+    }
+    .portfolio-area {
+        padding: 75px 40px 45px 40px;
+    }
+    .contact-container {
+        padding: 75px 40px 80px 40px;
+    }
+    .footer-area {
+        padding: 30px 10px;
+    }
+    .portfolio-wrapper .item-content h6, .portfolio-wrapper .item-content p {
+        padding: 2px 15px;
+    }
+    .media-wrapper {
+        width: 100%;
+    }
     .single-item {
         padding: 0 5px;
     }
@@ -546,6 +609,7 @@ html, body {
     }
     .portfolio-wrapper .item-content p {
         font-size: 10px;
+        margin-bottom: 8px;
     }
 }
 @media screen and (max-width: 480px) {
@@ -558,9 +622,13 @@ html, body {
 }
 @media screen and (max-width: 425px) {
     .portfolio-wrapper .item-content h6 {
-        font-size: 8px;
+        font-size: 9px;
     }
     .portfolio-wrapper .item-content p {
-        font-size: 6px;
+        font-size: 7px;
+        margin-bottom: 5px;
+    }
+    .portfolio-wrapper .item-content h6, .portfolio-wrapper .item-content p {
+        padding: 1px 8px;
     }
 }

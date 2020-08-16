@@ -1,8 +1,11 @@
 // Color randomizing
-var rand = Math.floor(Math.random()*3);
-console.log(rand);
+var rand = Math.floor(Math.random()*4);
 document.getElementById("favicon").href = "img/favicons/favicon-"+rand+".ico";
 document.getElementById("color").href = "css/color-"+rand+".css";
+if (rand === 0) document.getElementById("preloader").style.backgroundColor = "#dc3545";
+else if (rand === 1) document.getElementById("preloader").style.backgroundColor = "#60c000";
+else if (rand === 2) document.getElementById("preloader").style.backgroundColor = "#007bff";
+else if (rand === 3) document.getElementById("preloader").style.backgroundColor = "#fd7e14";
 
 // Image slideshow
 var images = new Array('../img/home/uofthacks.jpg', '../img/home/guitar.png', '../img/home/soccer2.png', '../img/home/citizen.jpg', '../img/home/beatit.png', '../img/home/raocup.png', '../img/home/massey.jpg', '../img/home/rockband.png', '../img/home/soccer1.png');
@@ -14,25 +17,30 @@ function doSlideshow() {
     $('.slide-bg')
     .css('background-image', 'url("'+images[nextimage++]+'")')
     .fadeIn(500,function() {
-        setTimeout(doSlideshow, 5500);
+        setTimeout(doSlideshow, 5000);
     });
 }
 
 // Scrolling and colors
 $(document).ready(function () {
-
+    //Preloader
+    preloaderFadeOutTime = 2000;
+    function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    
     // get the anchor link buttons
     const menuBtn = $('.nav-link');
     // when each button is clicked
     menuBtn.click(()=>{	
         // set a short timeout before taking action
         // so as to allow hash to be set
-        // setTimeout(()=>{
-        // // call removeHash function after set timeout
-        // removeHash();
-        // }, 5); // 5 millisecond timeout in this case
-
+        setTimeout(()=>{
+        // call removeHash function after set timeout
         removeHash();
+        }, 5); // 5 millisecond timeout in this case
     });
 
     $(document).on("scroll", onScroll);

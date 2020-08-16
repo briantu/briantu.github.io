@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175454181-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-175454181-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Brian Tu's Personal Website">
@@ -20,10 +30,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" id="color" href="css/color-0.css">
+    <link rel="stylesheet" id="color" href="css/color-3.css">
 
 </head>
 <body>
+    <!-- CSS Spinner Preloader-->
+    <div class="spinner-wrapper">
+        <div class="spinner" id="preloader"></div>
+    </div>
+    <!-- preloading images (idk if this helps)-->
+    <img src="img/home/beatit.png" style="display:none;" alt="" />
+    <img src="img/home/citizen.jpg" style="display:none;" alt="" />
+    <img src="img/home/guitar.png" style="display:none;" alt="" />
+    <img src="img/home/massey.jpg" style="display:none;" alt="" />
+    <img src="img/home/raocup.png" style="display:none;" alt="" />
+    <img src="img/home/rockband.png" style="display:none;" alt="" />
+    <img src="img/home/soccer1.png" style="display:none;" alt="" />
+    <img src="img/home/soccer2.png" style="display:none;" alt="" />
+    <img src="img/home/uofthacks.jpg" style="display:none;" alt="" />
+
     <div class="main-wrapper">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -409,5 +434,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+
 </body>
 </html>
