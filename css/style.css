@@ -556,3 +556,11 @@ html, body {
         font-size: 8px;
     }
 }
+@media screen and (max-width: 425px) {
+    .portfolio-wrapper .item-content h6 {
+        font-size: 8px;
+    }
+    .portfolio-wrapper .item-content p {
+        font-size: 6px;
+    }
+}
