@@ -83,8 +83,8 @@ html, body {
 }
 .sidebar p {
     color: #8a8a8a;
-    font-size: 14.5px;
-    line-height: 100%;
+    font-size: 14px;
+    line-height: 135%;
     margin-bottom: 40px;
 }
 .sidebar a {
