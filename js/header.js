@@ -102,6 +102,9 @@ jQuery(document).ready(function($){
 	}
 
 	function showWord($word, $duration) {
+		//console.log($word.text());
+		//console.log($('#ima').text());
+		($word.text() === "Athlete") ? $('#ima').text("I'm an") : $('#ima').text("I'm a");
 		if($word.parents('.cd-headline').hasClass('type')) {
 			showLetter($word.find('i').eq(0), $word, false, $duration);
 			$word.addClass('is-visible').removeClass('is-hidden');
