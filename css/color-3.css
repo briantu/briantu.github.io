@@ -11,6 +11,9 @@
 .nav-item .active {
     color: #fd7e14;
 }
+input:checked + .slider {
+    background-color: #fd7e14;
+}
 
 /* home */
 .home-container span {

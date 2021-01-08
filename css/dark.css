@@ -92,6 +92,66 @@ html, body {
     font-size: 16px;
     padding: 10px;
 }
+
+.switch {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 40px;
+    right: 25%;
+    left: 50%;
+    margin-left: -20px;
+}
+
+.switch input {
+    display:none;
+}
+
+.slider {
+    background-color: #888;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #eee;
+    bottom: 2px;
+    content: "";
+    height: 16px;
+    left: 2.8px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+}
+
+input:checked + .slider {
+    background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+    transform: translateX(19px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+#dark-switch {
+    position: absolute;
+    width: 50%;
+    bottom: 0px;
+    right: 25%;
+    left: 50%;
+    margin-left: -25%;
+}
 /* Side bar CSS above*/
 
 /* SECTIONS CSS */
@@ -208,6 +268,7 @@ html, body {
     margin-bottom: 35px;
 }
 .section-header h2 {
+    color: rgb(255, 255, 255, 0.95);
     font-size: 35px;
     font-weight: 800;
     letter-spacing: -.25px;
@@ -220,7 +281,10 @@ html, body {
     max-width: 37%;
 }
 .about-container img {
-    border-color: rgba(0,0,0,.25);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+.img-thumbnail {
+    background-color: rgb(18, 18, 18, 0.98);
 }
 .about-container .about-text {
     padding: 0;
@@ -238,16 +302,17 @@ html, body {
     margin-bottom: 8px;
 }
 .about-text h6 {
+    color: rgb(255, 255, 255, 0.95);
     font-size: 28px;
     font-weight: 700;
     line-height: 1.5;
     margin-bottom: 15px;
 }
 .about-text .about-desc {
-    color: #333;
+    color: rgb(255, 255, 255, 1);
     font-size: 15px;
     line-height: 1.95;
-    border-bottom: 2px solid rgba(0,0,0,.08);
+    border-bottom: 2px solid rgba(85,85,85,.2);
     margin-bottom: 0;
     padding-bottom: 27px;
 }
@@ -273,12 +338,12 @@ html, body {
 
 /* Portfolio section below */
 .portfolio-area {
-    background-color: rgb(18, 18, 18, 0.96);
+    background-color: rgb(18, 18, 18, 0.98);
     padding: 75px 62px 45px 62px;
 }
 .section-header p {
     font-size: 15px;
-    color: #333;
+    color: rgb(255, 255, 255, 0.9);
 }
 .portfolio-wrapper {
     align-items: center;
@@ -341,7 +406,7 @@ html, body {
 
 /* Contact section below */
 .contact-area {
-    background-color: #fff;
+    background-color: rgb(18, 18, 18, 1);
 }
 .contact-container {
     padding: 75px 62px 80px 62px;
@@ -467,7 +532,7 @@ html, body {
 
 /* Footer section below */
 .footer-area {
-    background-color: #f7f7f7;
+    background-color: rgb(18, 18, 18, 0.98);
     padding: 30px 62px;
 }
 .footer-container {

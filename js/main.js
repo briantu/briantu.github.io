@@ -21,6 +21,22 @@ function doSlideshow() {
     });
 }
 
+//dark mode switch
+const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.getElementById("theme").href = "css/dark.css";
+        //document.getElementsByClassName("slider").style.backgroundColor = document.getElementById("preloader").style.backgroundColor;
+        console.log(document.querySelector(".slider").style.backgroundColor);
+    }
+    else {
+        document.getElementById("theme").href = "css/style.css";
+    }    
+}
+
+toggleSwitch.addEventListener('change', switchTheme, false);
+
 // Scrolling and colors
 $(document).ready(function () {
     // get the anchor link buttons
