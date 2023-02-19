@@ -22,6 +22,5 @@ export const getPlaylists = async () => {
   let myPlaylists = data.items.filter(
     (playlist) => playlist.owner.id == USER_ID && playlist.public
   );
-  console.log(myPlaylists);
-  return myPlaylists;
+  return myPlaylists.slice(0, 9);
 };
