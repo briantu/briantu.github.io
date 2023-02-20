@@ -8,8 +8,8 @@
 
     <link rel="icon" type="image/x-icon" href="public/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
-    <script defer type="module" src="spotify.js"></script>
-    <script defer type="module" src="app.js"></script>
+    <script defer type="module" src="js/spotify.js"></script>
+    <script defer type="module" src="js/app.js"></script>
   </head>
   <body>
     <section id="header" class="hidden">
@@ -18,29 +18,40 @@
       </div>
       <div id="aboutme">
         <h1>brian tu</h1>
-        <p>
+        <p style="margin-bottom: 16px">
           - 3rd year computer science student @
           <a href="https://uwaterloo.ca/" target="_blank">uwaterloo</a>
-        </p>
-        <p>
+          <br />
           - previously software intern @
           <a href="https://ownersbox.com/" target="_blank">ownersbox</a>,
           <a href="https://www.adp.ca/" target="_blank">adp</a>,
           <a href="https://www.pwc.com/ca/en/" target="_blank">pwc</a>
         </p>
-        <h4>links</h4>
+        <u>links</u>
         <p>
           <a href="https://github.com/briantu" target="_blank">github</a> /
           <a href="https://devpost.com/brianptu" target="_blank">devpost</a> /
-          <a href="https://github.com/briantu" target="_blank">linkedin</a> /
-          <a href="https://devpost.com/brianptu" target="_blank">instagram</a> /
-          <a href="https://devpost.com/brianptu" target="_blank">email</a>
+          <a href="https://www.linkedin.com/in/brianptu/" target="_blank"
+            >linkedin</a
+          >
+          /
+          <a href="https://www.instagram.com/bptu_/" target="_blank"
+            >instagram</a
+          >
+          /
+          <a href="mailto:brianptu2@gmail.com">email</a>
         </p>
       </div>
     </section>
 
+    <nav>
+      <span class="underline"></span>
+      <a onClick="ul(0)">projects</a> /<a onClick="ul(1)">music</a>/
+      <a onClick="ul(2)">interests</a>
+    </nav>
+
     <section>
-      <h3>my playlists</h3>
+      <h3>my projects</h3>
       <div
         class="playlists"
         style="display: flex; justify-content: center; align-items: center"
@@ -48,5 +59,16 @@
         <div id="gallery"></div>
       </div>
     </section>
+
+    <!-- <section>
+      <h3>my playlists</h3>
+      <div
+        class="playlists"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <div id="gallery"></div>
+      </div>
+    </section> -->
+    <script src="js/nav.js"></script>
   </body>
 </html>

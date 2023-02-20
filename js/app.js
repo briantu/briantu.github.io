@@ -18,7 +18,6 @@ spline.load("https://prod.spline.design/6JHN1ME9hdACLFfk/scene.splinecode");
 
 const displayPlaylists = async () => {
   const playlists = await getPlaylists();
-  console.log(playlists);
   let div = document.getElementById("gallery");
   playlists.forEach((p, i) => {
     const span = `<span style="--i:${i};">
