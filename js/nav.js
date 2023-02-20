@@ -3,4 +3,5 @@ function ul(index) {
   underline.style.transform = `translateX(calc(${index * 100}% + ${
     index * 11
   }px))`;
+  // handle section transitions
 }

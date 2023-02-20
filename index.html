@@ -50,25 +50,49 @@
       <a onClick="ul(2)">interests</a>
     </nav>
 
-    <section>
+    <section class="hidden">
       <h3>my projects</h3>
-      <div
-        class="playlists"
-        style="display: flex; justify-content: center; align-items: center"
-      >
-        <div id="gallery"></div>
+      <div class="projects-wrapper">
+        <div class="projects">
+          <div class="project hidden" style="--i: 0">
+            <img src="public/img/qlear.jpg" alt="qlear" />
+          </div>
+          <div class="project hidden" style="--i: 1">
+            <img src="public/img/companion.png" alt="companion" />
+          </div>
+          <div class="project hidden" style="--i: 2">
+            <img src="public/img/raven.jpg" alt="raven" />
+          </div>
+          <div class="project" style="--i: 3">
+            <img src="public/img/lemonslive.png" alt="lemonslive" />
+          </div>
+          <!-- repeat -->
+          <div class="project" style="--i: 0">
+            <img src="public/img/qlear.jpg" alt="qlear" />
+          </div>
+          <div class="project" style="--i: 1">
+            <img src="public/img/companion.png" alt="companion" />
+          </div>
+          <div class="project" style="--i: 2">
+            <img src="public/img/raven.jpg" alt="raven" />
+          </div>
+          <div class="project" style="--i: 3">
+            <img src="public/img/lemonslive.png" alt="lemonslive" />
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- <section>
+    <section style="display: none">
       <h3>my playlists</h3>
       <div
-        class="playlists"
+        class="playlists-wrapper"
         style="display: flex; justify-content: center; align-items: center"
       >
-        <div id="gallery"></div>
+        <div id="playlists"></div>
       </div>
-    </section> -->
+    </section>
+
     <script src="js/nav.js"></script>
   </body>
 </html>

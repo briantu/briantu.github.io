@@ -3,18 +3,32 @@
   src: url(public/AdobeMyungjoStdM.otf) format("opentype");
 }
 
+:root {
+  --project-width: 268px;
+}
+
 body {
   font-family: "AdobeMyungjo", sans-serif;
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
   padding: 0 16px 0 16px;
   background-color: #080404;
   color: #f2f2f2;
-  overflow: hidden;
+  overflow-x: none;
+  border-style: solid;
 }
 p {
   font-size: small;
   margin: 0;
+}
+/* section {
+  border-style: solid;
+} */
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
 }
 
 /* header section */
@@ -41,6 +55,7 @@ p {
   margin-top: 12px;
 }
 
+/* navbar */
 nav {
   position: relative;
   white-space: nowrap;
@@ -48,7 +63,6 @@ nav {
 .underline {
   display: block;
   position: absolute;
-  z-index: 0;
   bottom: 0;
   left: 0;
   width: 15%;
@@ -56,32 +70,63 @@ nav {
   pointer-events: none;
   background: #f2f2f2;
   border-radius: 12px;
-  mix-blend-mode: initial;
   transition: transform 0.5s ease-in-out;
 }
 nav a {
   display: inline-block;
   width: 15%;
-  z-index: 10;
   text-align: center;
   cursor: pointer;
 }
 
+/* projects section */
+.projects-wrapper {
+  width: 100%;
+  border-style: solid;
+  overflow: auto;
+}
+.projects {
+  display: flex;
+  width: calc(8 * var(--project-width));
+  animation: scroll 20s linear infinite;
+  animation-delay: 2s;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-4 * var(--project-width)));
+  }
+}
+.project {
+  width: var(--project-width);
+  padding: 0 6px;
+  transition-delay: calc(200ms * var(--i));
+  /* margin-right: 12px; */
+}
+.project:last-child {
+  margin-right: 0px;
+}
+.project img {
+  width: 100%;
+}
+
 /* playlists section */
-.playlists {
+.playlists-wrapper {
   opacity: 0;
   filter: blur(5px);
   transition: all 1s;
   margin-top: 80px;
 }
-#gallery {
+#playlists {
   position: relative;
   width: 160px;
   height: 160px;
   transform-style: preserve-3d;
-  animation: animate 20s linear infinite;
+  animation: rotate 20s linear infinite;
 }
-@keyframes animate {
+@keyframes rotate {
   0% {
     transform: perspective(1000px) rotateY(0deg);
   }
@@ -89,7 +134,7 @@ nav a {
     transform: perspective(1000px) rotateY(360deg);
   }
 }
-#gallery span {
+#playlists span {
   position: absolute;
   top: 0;
   left: 0;
@@ -102,13 +147,13 @@ nav a {
   -webkit-box-reflect: below 0px
     linear-gradient(transparent, transparent, #0002);
 }
-#gallery span:hover {
+#playlists span:hover {
   top: -15px;
 }
-#gallery span:hover div {
+#playlists span:hover div {
   opacity: 1;
 }
-#gallery span img {
+#playlists span img {
   position: absolute;
   top: 0;
   left: 0;
@@ -116,7 +161,7 @@ nav a {
   height: 100%;
   object-fit: cover;
 }
-#gallery span div {
+#playlists span div {
   position: absolute;
   top: 168px;
   width: 100%;
@@ -125,16 +170,10 @@ nav a {
   transition: all 1s;
 }
 
-.hidden {
-  opacity: 0;
-  filter: blur(5px);
-  /* transform: translateX(-100%); */
-  transition: all 1s;
-}
 .show {
   opacity: 1;
   filter: blur(0);
-  /* transform: translateX(0); */
+  transform: translateX(0);
 }
 
 @media only screen and (max-width: 500px) {
@@ -142,17 +181,17 @@ nav a {
     width: 100px;
     height: 100px;
   }
-  .playlists {
+  .playlists-wrapper {
     margin-top: 40px;
   }
-  #gallery {
+  #playlists {
     width: 125px;
     height: 125px;
   }
-  #gallery span {
+  #playlists span {
     transform: rotateY(calc(var(--i) * -40deg)) translateZ(225px);
   }
-  #gallery span div {
+  #playlists span div {
     top: 128px;
   }
 }

@@ -18,7 +18,7 @@ spline.load("https://prod.spline.design/6JHN1ME9hdACLFfk/scene.splinecode");
 
 const displayPlaylists = async () => {
   const playlists = await getPlaylists();
-  let div = document.getElementById("gallery");
+  let div = document.getElementById("playlists");
   playlists.forEach((p, i) => {
     const span = `<span style="--i:${i};">
         <a href="${p.external_urls.spotify}" target="_blank">
@@ -28,6 +28,6 @@ const displayPlaylists = async () => {
       </span>`;
     div.innerHTML ? (div.innerHTML += span) : (div.innerHTML = span);
   });
-  document.querySelector(".playlists").classList.add("show");
+  document.querySelector(".playlists-wrapper").classList.add("show");
 };
 displayPlaylists();
