@@ -28,6 +28,8 @@ const displayPlaylists = async () => {
       </span>`;
     div.innerHTML ? (div.innerHTML += span) : (div.innerHTML = span);
   });
-  document.querySelector(".playlists-wrapper").classList.add("show");
 };
 displayPlaylists();
+
+document.getElementById("leftarrow").style.opacity = 1;
+document.getElementById("rightarrow").style.opacity = 1;

@@ -19,10 +19,10 @@
       <div id="aboutme">
         <h1>brian tu</h1>
         <p style="margin-bottom: 16px">
-          - 3rd year computer science student @
+          3rd year computer science student @
           <a href="https://uwaterloo.ca/" target="_blank">uwaterloo</a>
           <br />
-          - previously software intern @
+          previously software intern @
           <a href="https://ownersbox.com/" target="_blank">ownersbox</a>,
           <a href="https://www.adp.ca/" target="_blank">adp</a>,
           <a href="https://www.pwc.com/ca/en/" target="_blank">pwc</a>
@@ -45,138 +45,196 @@
     </section>
 
     <nav>
-      <span class="underline"></span>
+      <span class="underline" style="--i: 0"></span>
       <a onclick="ul(0)">projects</a> /<a onclick="ul(1)">music</a>/
       <a onclick="ul(2)">interests</a>
     </nav>
 
-    <section>
-      <h3>my projects</h3>
-      <div style="position: relative">
-        <div id="leftarrow" onclick="scrollleft()">&#8249;</div>
-        <div id="rightarrow" onclick="scrollright()">&#8250;</div>
-        <div class="projects-wrapper hidden">
-          <div class="projects">
-            <div
-              class="project hidden"
-              style="--i: 0"
-              onmouseover="fixdelay(0)"
-            >
-              <a
-                href="https://uwblueprint.medium.com/project-spotlight-sistering-4ef0772d848"
-                target="_blank"
+    <section id="sections">
+      <!-- projects -->
+      <div id="projects-section">
+        <h3 class="hidden">my projects</h3>
+        <div style="position: relative">
+          <div id="leftarrow" onclick="scrollleft()">&#8249;</div>
+          <div id="rightarrow" onclick="scrollright()">&#8250;</div>
+          <div class="projects-wrapper hidden">
+            <div class="projects">
+              <div
+                class="project hidden"
+                style="--i: 0"
+                onmouseover="fixdelay(0)"
               >
-                <img src="public/img/sistering.jpg" alt="sistering" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div
-              class="project hidden"
-              style="--i: 1"
-              onmouseover="fixdelay(1)"
-            >
-              <a href="https://devpost.com/software/qlear" target="_blank">
-                <img src="public/img/qlear.jpg" alt="qlear" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div
-              class="project hidden"
-              style="--i: 2"
-              onmouseover="fixdelay(2)"
-            >
-              <a href="https://github.com/briantu/lemons-live" target="_blank">
-                <img src="public/img/lemonslive.png" alt="lemonslive" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div
-              class="project hidden"
-              style="--i: 3"
-              onmouseover="fixdelay(3)"
-            >
-              <a
-                href="https://devpost.com/software/raven-4pt3gx"
-                target="_blank"
+                <a
+                  href="https://uwblueprint.medium.com/project-spotlight-sistering-4ef0772d848"
+                  target="_blank"
+                >
+                  <img src="public/img/sistering.jpg" alt="sistering" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div
+                class="project hidden"
+                style="--i: 1"
+                onmouseover="fixdelay(1)"
               >
-                <img src="public/img/raven.jpg" alt="raven" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div
-              class="project hidden"
-              style="--i: 4"
-              onmouseover="fixdelay(4)"
-            >
-              <a
-                href="https://devpost.com/software/companion-m2lg9t"
-                target="_blank"
+                <a href="https://devpost.com/software/qlear" target="_blank">
+                  <img src="public/img/qlear.jpg" alt="qlear" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div
+                class="project hidden"
+                style="--i: 2"
+                onmouseover="fixdelay(2)"
               >
-                <img src="public/img/companion.png" alt="companion" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div class="project" style="--i: 5" onmouseover="fixdelay(5)">
-              <a href="https://devpost.com/software/covalert" target="_blank">
-                <img src="public/img/covalert.png" alt="covalert" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div class="project" style="--i: 6" onmouseover="fixdelay(6)">
-              <a
-                href="https://github.com/briantu/dungeon_platformer"
-                target="_blank"
+                <a
+                  href="https://github.com/briantu/lemons-live"
+                  target="_blank"
+                >
+                  <img src="public/img/lemonslive.png" alt="lemonslive" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div
+                class="project hidden"
+                style="--i: 3"
+                onmouseover="fixdelay(3)"
               >
-                <img src="public/img/cppgame.png" alt="dungeonplatformer" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div class="project" style="--i: 7" onmouseover="fixdelay(7)">
-              <a href="https://devpost.com/software/credid" target="_blank">
-                <img src="public/img/credid.png" alt="credid" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div class="project" style="--i: 8" onmouseover="fixdelay(8)">
-              <a
-                href="https://github.com/briantu/BLGHackForChange"
-                target="_blank"
+                <a
+                  href="https://devpost.com/software/raven-4pt3gx"
+                  target="_blank"
+                >
+                  <img src="public/img/raven.jpg" alt="raven" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div
+                class="project hidden"
+                style="--i: 4"
+                onmouseover="fixdelay(4)"
               >
-                <img src="public/img/said.png" alt="said" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
-            </div>
-            <div class="project" style="--i: 9" onmouseover="fixdelay(9)">
-              <a
-                href="https://devpost.com/software/schoolcentre"
-                target="_blank"
-              >
-                <img src="public/img/schoolcentre.png" alt="schoolcentre" />
-                <div class="overlay"></div>
-                <div class="arrow">&#8599;</div>
-              </a>
+                <a
+                  href="https://devpost.com/software/companion-m2lg9t"
+                  target="_blank"
+                >
+                  <img src="public/img/companion.png" alt="companion" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div class="project" style="--i: 5" onmouseover="fixdelay(5)">
+                <a href="https://devpost.com/software/covalert" target="_blank">
+                  <img src="public/img/covalert.png" alt="covalert" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div class="project" style="--i: 6" onmouseover="fixdelay(6)">
+                <a
+                  href="https://github.com/briantu/dungeon_platformer"
+                  target="_blank"
+                >
+                  <img src="public/img/cppgame.png" alt="dungeonplatformer" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div class="project" style="--i: 7" onmouseover="fixdelay(7)">
+                <a href="https://devpost.com/software/credid" target="_blank">
+                  <img src="public/img/credid.png" alt="credid" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div class="project" style="--i: 8" onmouseover="fixdelay(8)">
+                <a
+                  href="https://github.com/briantu/BLGHackForChange"
+                  target="_blank"
+                >
+                  <img src="public/img/said.png" alt="said" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
+              <div class="project" style="--i: 9" onmouseover="fixdelay(9)">
+                <a
+                  href="https://devpost.com/software/schoolcentre"
+                  target="_blank"
+                >
+                  <img src="public/img/schoolcentre.png" alt="schoolcentre" />
+                  <div class="overlay"></div>
+                  <div class="arrow">&#8599;</div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <section style="display: none">
-      <h3>my playlists</h3>
-      <div
-        class="playlists-wrapper"
-        style="display: flex; justify-content: center; align-items: center"
-      >
-        <div id="playlists"></div>
+      <!-- music -->
+      <div id="music-section">
+        <h3>my playlists</h3>
+        <div
+          class="playlists-wrapper"
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <div id="playlists"></div>
+        </div>
+      </div>
+      <!-- interests -->
+      <div id="interests-section">
+        <h3>guitar</h3>
+        <p>
+          taught by
+          <a href="https://www.youtube.com/@jamierobinson777" target="_blank"
+            >jamie robinson</a
+          >
+          <br />
+          <u>fav guitarists</u> <br />
+          <a href="https://www.youtube.com/@SteveVaiHimself" target="_blank"
+            >steve vai</a
+          >
+          /
+          <a href="https://www.youtube.com/@TimHensonW6RST" target="_blank"
+            >tim henson</a
+          >
+          /
+          <a href="https://www.youtube.com/@sunghajung" target="_blank"
+            >sungha jung</a
+          >
+        </p>
+        <h3>soccer</h3>
+        <p>
+          #1 messi fan <br />
+          <u>teams</u> <br />
+          <a href="https://www.ucc.on.ca/" target="_blank">ucc</a> junior
+          varsity /
+          <a href="https://www.richmondhillsoccer.com/" target="_blank">rhsc</a>
+          u12, u13, u17 /
+          <a href="https://www.markhamsoccer.org/" target="_blank"
+            >markham sc</a
+          >
+          u14
+        </p>
+        <h3>chess</h3>
+        <p>
+          casual hardstuck 1000 rated
+          <a
+            href="https://en.wikipedia.org/wiki/English_Opening"
+            target="_blank"
+            >english</a
+          >
+          /
+          <a
+            href="https://en.wikipedia.org/wiki/Sicilian_Defence"
+            target="_blank"
+            >sicilian</a
+          >
+          one trick pony
+        </p>
       </div>
     </section>
 

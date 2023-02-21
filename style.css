@@ -5,7 +5,8 @@
 
 :root {
   --body-width: calc(2.5 * var(--project-width));
-  --project-width: 250px;
+  --project-width: 300px;
+  --project-overlap: 100px;
 }
 
 body {
@@ -52,11 +53,13 @@ p {
 #header h1 {
   margin: 0;
 }
-#header a {
+#header a,
+#interests-section a {
   color: #d8e9a8;
-  transition: color 0.1s ease-in-out;
+  transition: color 0.2s ease-out;
 }
-#header a:hover {
+#header a:hover,
+#interests-section a:hover {
   color: #a2af7e;
 }
 #avocado {
@@ -92,7 +95,21 @@ nav a {
   cursor: pointer;
 }
 
+#sections {
+  position: relative;
+}
 /* projects section */
+#projects-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: visible;
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: all 1s;
+}
 .projects-wrapper {
   overflow: auto;
   transition: all 1s ease-out;
@@ -100,13 +117,13 @@ nav a {
 .projects {
   display: flex;
   width: calc(
-    (var(--project-width) - 80px) * 11
+    (var(--project-width) - var(--project-overlap)) * 11
   ); /* (project_width - overlap)*(num_projects+1) */
 }
 .project {
   position: relative;
   transition: all 1s;
-  left: calc(-80px * var(--i)); /* overlap */
+  left: calc(-1 * var(--project-overlap) * var(--i)); /* overlap */
 }
 .project:nth-child(2) {
   transition-delay: 400ms;
@@ -127,7 +144,7 @@ nav a {
   opacity: 1;
 }
 .project:hover ~ .project {
-  left: calc(80px - 80px * var(--i));
+  left: calc(var(--project-overlap) * (1 - var(--i)));
   /* fix transition delay in events.js */
 }
 .project img {
@@ -149,7 +166,7 @@ nav a {
   color: #f2f2f2;
   font-size: 32px;
   position: absolute;
-  top: calc(50% - 4px);
+  top: calc(50% - 6px);
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -158,15 +175,21 @@ nav a {
 }
 #leftarrow {
   position: absolute;
-  top: calc(50% - 4px);
+  top: calc(50% - 6px);
   left: -32px;
   transform: translate(0, -50%);
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 1.5s;
 }
 #rightarrow {
   position: absolute;
-  top: calc(50% - 4px);
+  top: calc(50% - 6px);
   right: -32px;
   transform: translate(0, -50%);
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 1.5s;
 }
 #leftarrow:hover,
 #rightarrow:hover {
@@ -174,14 +197,21 @@ nav a {
 }
 
 /* playlists section */
-.playlists-wrapper {
+#music-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  visibility: hidden;
   opacity: 0;
   filter: blur(5px);
+  transform: translateX(100%);
   transition: all 1s;
+}
+.playlists-wrapper {
   margin-top: 80px;
 }
 #playlists {
-  position: relative;
   width: 160px;
   height: 160px;
   transform-style: preserve-3d;
@@ -231,7 +261,25 @@ nav a {
   transition: all 1s;
 }
 
+/* interests section */
+#interests-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(100%);
+  transition: all 1s;
+}
+#interests-section h3 {
+  margin-bottom: 0;
+}
+
 @media only screen and (max-width: 500px) {
+  :root {
+    --project-overlap: 140px;
+  }
   #avocado {
     width: 100px;
     height: 100px;
@@ -242,17 +290,6 @@ nav a {
   nav a {
     width: 30%;
   }
-
-  /* bigger overlap 40px */
-  .projects {
-    width: calc((var(--project-width) - 140px) * 11);
-  }
-  .project {
-    left: calc(-140px * var(--i));
-  }
-  .project:hover ~ .project {
-    left: calc(140px - 140px * var(--i));
-  }
   #leftarrow {
     display: none;
   }
@@ -260,6 +297,9 @@ nav a {
     display: none;
   }
 
+  #music-section {
+    overflow: auto;
+  }
   .playlists-wrapper {
     margin-top: 40px;
   }
