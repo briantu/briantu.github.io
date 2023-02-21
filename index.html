@@ -46,38 +46,125 @@
 
     <nav>
       <span class="underline"></span>
-      <a onClick="ul(0)">projects</a> /<a onClick="ul(1)">music</a>/
-      <a onClick="ul(2)">interests</a>
+      <a onclick="ul(0)">projects</a> /<a onclick="ul(1)">music</a>/
+      <a onclick="ul(2)">interests</a>
     </nav>
 
-    <section class="hidden">
+    <section>
       <h3>my projects</h3>
-      <div class="projects-wrapper">
-        <div class="projects">
-          <div class="project hidden" style="--i: 0">
-            <img src="public/img/qlear.jpg" alt="qlear" />
-          </div>
-          <div class="project hidden" style="--i: 1">
-            <img src="public/img/companion.png" alt="companion" />
-          </div>
-          <div class="project hidden" style="--i: 2">
-            <img src="public/img/raven.jpg" alt="raven" />
-          </div>
-          <div class="project" style="--i: 3">
-            <img src="public/img/lemonslive.png" alt="lemonslive" />
-          </div>
-          <!-- repeat -->
-          <div class="project" style="--i: 0">
-            <img src="public/img/qlear.jpg" alt="qlear" />
-          </div>
-          <div class="project" style="--i: 1">
-            <img src="public/img/companion.png" alt="companion" />
-          </div>
-          <div class="project" style="--i: 2">
-            <img src="public/img/raven.jpg" alt="raven" />
-          </div>
-          <div class="project" style="--i: 3">
-            <img src="public/img/lemonslive.png" alt="lemonslive" />
+      <div style="position: relative">
+        <div id="leftarrow" onclick="scrollleft()">&#8249;</div>
+        <div id="rightarrow" onclick="scrollright()">&#8250;</div>
+        <div class="projects-wrapper hidden">
+          <div class="projects">
+            <div
+              class="project hidden"
+              style="--i: 0"
+              onmouseover="fixdelay(0)"
+            >
+              <a
+                href="https://uwblueprint.medium.com/project-spotlight-sistering-4ef0772d848"
+                target="_blank"
+              >
+                <img src="public/img/sistering.jpg" alt="sistering" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div
+              class="project hidden"
+              style="--i: 1"
+              onmouseover="fixdelay(1)"
+            >
+              <a href="https://devpost.com/software/qlear" target="_blank">
+                <img src="public/img/qlear.jpg" alt="qlear" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div
+              class="project hidden"
+              style="--i: 2"
+              onmouseover="fixdelay(2)"
+            >
+              <a href="https://github.com/briantu/lemons-live" target="_blank">
+                <img src="public/img/lemonslive.png" alt="lemonslive" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div
+              class="project hidden"
+              style="--i: 3"
+              onmouseover="fixdelay(3)"
+            >
+              <a
+                href="https://devpost.com/software/raven-4pt3gx"
+                target="_blank"
+              >
+                <img src="public/img/raven.jpg" alt="raven" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div
+              class="project hidden"
+              style="--i: 4"
+              onmouseover="fixdelay(4)"
+            >
+              <a
+                href="https://devpost.com/software/companion-m2lg9t"
+                target="_blank"
+              >
+                <img src="public/img/companion.png" alt="companion" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div class="project" style="--i: 5" onmouseover="fixdelay(5)">
+              <a href="https://devpost.com/software/covalert" target="_blank">
+                <img src="public/img/covalert.png" alt="covalert" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div class="project" style="--i: 6" onmouseover="fixdelay(6)">
+              <a
+                href="https://github.com/briantu/dungeon_platformer"
+                target="_blank"
+              >
+                <img src="public/img/cppgame.png" alt="dungeonplatformer" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div class="project" style="--i: 7" onmouseover="fixdelay(7)">
+              <a href="https://devpost.com/software/credid" target="_blank">
+                <img src="public/img/credid.png" alt="credid" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div class="project" style="--i: 8" onmouseover="fixdelay(8)">
+              <a
+                href="https://github.com/briantu/BLGHackForChange"
+                target="_blank"
+              >
+                <img src="public/img/said.png" alt="said" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
+            <div class="project" style="--i: 9" onmouseover="fixdelay(9)">
+              <a
+                href="https://devpost.com/software/schoolcentre"
+                target="_blank"
+              >
+                <img src="public/img/schoolcentre.png" alt="schoolcentre" />
+                <div class="overlay"></div>
+                <div class="arrow">&#8599;</div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -93,6 +180,6 @@
       </div>
     </section>
 
-    <script src="js/nav.js"></script>
+    <script src="js/events.js"></script>
   </body>
 </html>
