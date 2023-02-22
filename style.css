@@ -74,9 +74,10 @@ p {
 }
 
 /* navbar */
-nav {
+.navbar {
   position: relative;
   white-space: nowrap;
+  transition-delay: 100ms;
 }
 .underline {
   display: block;
@@ -90,7 +91,7 @@ nav {
   border-radius: 12px;
   transition: transform 0.5s ease-in-out;
 }
-nav a {
+.navbar a {
   display: inline-block;
   width: 20%;
   text-align: center;
@@ -220,6 +221,7 @@ nav a {
   height: 160px;
   transform-style: preserve-3d;
   animation: rotate 20s linear infinite;
+  animation-play-state: paused;
 }
 @keyframes rotate {
   0% {
@@ -283,6 +285,9 @@ nav a {
 /* webring section */
 #webring {
   text-align: center;
+  opacity: 0;
+  transition: all 1s;
+  transition-delay: 2s;
 }
 #webring a {
   text-decoration: none;

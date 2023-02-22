@@ -33,3 +33,4 @@ displayPlaylists();
 
 document.getElementById("leftarrow").style.opacity = 1;
 document.getElementById("rightarrow").style.opacity = 1;
+document.getElementById("webring").style.opacity = 1;
