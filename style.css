@@ -129,7 +129,7 @@ nav a {
   transition-delay: 400ms;
 }
 .project:nth-child(3) {
-  transition-delay: 600ms;
+  transition-delay: 700ms;
 }
 .project:nth-child(4) {
   transition-delay: 750ms;
@@ -278,7 +278,7 @@ nav a {
 
 @media only screen and (max-width: 500px) {
   :root {
-    --project-overlap: 140px;
+    --project-overlap: 180px;
   }
   #avocado {
     width: 100px;
@@ -297,9 +297,6 @@ nav a {
     display: none;
   }
 
-  #music-section {
-    overflow: auto;
-  }
   .playlists-wrapper {
     margin-top: 40px;
   }
