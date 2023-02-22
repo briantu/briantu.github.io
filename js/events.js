@@ -13,9 +13,14 @@ function ul(newIndex) {
   }px))`;
   underline.style.setProperty("--i", newIndex);
 
+  let flag = true;
   // handle section transitions
   if (curIndex < newIndex) {
     sections[curIndex].style.transform = "translateX(-100%)";
+    // if interests was clicked before music the first time
+    if (flag && newIndex === 2)
+      sections[1].style.transform = "translateX(-100%)";
+    flag = false;
   } else {
     sections[curIndex].style.transform = "translateX(100%)";
   }
