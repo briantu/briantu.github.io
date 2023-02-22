@@ -297,6 +297,9 @@ p {
   :root {
     --project-overlap: 180px;
   }
+  #header {
+    margin-bottom: 32px;
+  }
   #avocado {
     width: 100px;
     height: 100px;
@@ -304,7 +307,7 @@ p {
   .underline {
     width: 30%;
   }
-  nav a {
+  .navbar a {
     width: 30%;
   }
   #leftarrow {
