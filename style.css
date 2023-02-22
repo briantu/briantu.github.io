@@ -8,20 +8,8 @@
   --project-width: 300px;
   --project-overlap: 100px;
 }
-
-body {
-  font-family: "AdobeMyungjo", sans-serif;
-  max-width: var(--body-width);
-  margin: 0 auto;
-  padding: 0 16px 0 16px;
-  background-color: #080404;
-  color: #f2f2f2;
-  overflow-x: hidden;
-  /* border-style: solid; */
-}
-p {
-  font-size: small;
-  margin: 0;
+::selection {
+  background: #271657;
 }
 ::-webkit-scrollbar {
   width: 1px;
@@ -30,6 +18,20 @@ p {
 ::-webkit-scrollbar-thumb {
   background-color: #f2f2f2;
   border-radius: 12px;
+}
+body {
+  font-family: "AdobeMyungjo", sans-serif;
+  max-width: var(--body-width);
+  margin: 0 auto;
+  padding: 0 16px;
+  background-color: #080404;
+  color: #f2f2f2;
+  overflow-x: hidden;
+  /* border-style: solid; */
+}
+p {
+  font-size: small;
+  margin: 0;
 }
 
 .hidden {

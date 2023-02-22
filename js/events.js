@@ -23,7 +23,14 @@ function ul(newIndex) {
   sections[curIndex].style.opacity = 0;
   sections[curIndex].style.filter = "blur(5px)";
   sections[curIndex].style["transition-delay"] = "0ms";
+  if (curIndex === 1)
+    document.getElementById("playlists").style["animation-play-state"] =
+      "paused";
 
+  if (newIndex === 1) {
+    document.getElementById("playlists").style["animation-play-state"] =
+      "running";
+  }
   sections[newIndex].style.visibility = "visible";
   sections[newIndex].style.opacity = 1;
   sections[newIndex].style.filter = "blur(0)";
