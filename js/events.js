@@ -16,15 +16,15 @@ function ul(newIndex) {
   // handle section transitions
   if (curIndex < newIndex) {
     sections[curIndex].style.transform = "translateX(-100%)";
-    // if 0 -> 2 -> 1, 1 should come from left
-    if (curIndex === 0 && newIndex === 2)
-      sections[1].style.transform = "translateX(-100%)";
-    // if 0 -> 2 -> 1, 1 should come from right
-    else if (curIndex === 2 && newIndex === 0)
-      sections[1].style.transform = "translateX(100%)";
   } else {
     sections[curIndex].style.transform = "translateX(100%)";
   }
+  // if 0 -> 2 -> 1, 1 should come from left
+  if (curIndex === 0 && newIndex === 2)
+    sections[1].style.transform = "translateX(-100%)";
+  // if 2 -> 0 -> 1, 1 should come from right
+  else if (curIndex === 2 && newIndex === 0)
+    sections[1].style.transform = "translateX(100%)";
   sections[curIndex].style.visibility = "hidden";
   sections[curIndex].style.opacity = 0;
   sections[curIndex].style.filter = "blur(5px)";
