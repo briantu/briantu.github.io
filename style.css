@@ -19,6 +19,10 @@
   background-color: #f2f2f2;
   border-radius: 12px;
 }
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   font-family: "AdobeMyungjo", sans-serif;
   max-width: var(--body-width);
