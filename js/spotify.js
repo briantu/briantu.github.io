@@ -20,7 +20,8 @@ export const getPlaylists = async () => {
   );
   const data = await response.json();
   let myPlaylists = data.items.filter(
-    (playlist) => playlist.owner.id == USER_ID && playlist.public
+    (playlist) => playlist?.owner.id == USER_ID && playlist?.public
   );
+  console.log(myPlaylists);
   return myPlaylists.slice(0, 9);
 };
