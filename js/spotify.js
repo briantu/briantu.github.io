@@ -1,27 +1,12 @@
-const USER_ID = "ctifmmtjxemj7oo6jussq32z5";
-const getToken = async () => {
-  const response = await fetch(
-    "https://spotify-token-api.vercel.app/api/getToken"
-  );
-  const data = await response.json();
-  return data.access_token;
-};
+// The playlists are fetched, filtered, and trimmed server-side by the token API,
+// so the browser just asks for the finished list. No access token ever reaches here.
+const PLAYLISTS_API = "https://spotify-token-api.vercel.app/api/playlists";
 
 export const getPlaylists = async () => {
-  const token = await getToken();
-  const response = await fetch(
-    `https://api.spotify.com/v1/users/${USER_ID}/playlists?limit=50`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token,
-      },
-    }
-  );
-  const data = await response.json();
-  let myPlaylists = data.items.filter(
-    (playlist) => playlist?.owner.id == USER_ID && playlist?.public
-  );
-  console.log(myPlaylists);
-  return myPlaylists.slice(0, 9);
+  const response = await fetch(PLAYLISTS_API);
+  if (!response.ok) {
+    throw new Error(`Playlists request failed with ${response.status}`);
+  }
+  const playlists = await response.json();
+  return Array.isArray(playlists) ? playlists : [];
 };

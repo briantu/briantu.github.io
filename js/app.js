@@ -17,17 +17,31 @@ const spline = new Application(canvas);
 spline.load("https://prod.spline.design/6JHN1ME9hdACLFfk/scene.splinecode");
 
 const displayPlaylists = async () => {
-  const playlists = await getPlaylists();
-  let div = document.getElementById("playlists");
-  playlists.forEach((p, i) => {
-    const span = `<span style="--i:${i};">
-        <a href="${p.external_urls.spotify}" target="_blank">
-          <img src="${p.images[0].url}">
+  const div = document.getElementById("playlists");
+  if (!div) return;
+  try {
+    const playlists = await getPlaylists();
+    if (!playlists.length) {
+      div.innerHTML = `<p class="playlists-empty">No playlists to show right now.</p>`;
+      return;
+    }
+    div.innerHTML = playlists
+      .map((p, i) => {
+        const name = p.name ?? "";
+        const url = p.url ?? "#";
+        const image = p.image ?? "";
+        return `<span style="--i:${i};">
+        <a href="${url}" target="_blank" rel="noopener">
+          <img src="${image}" alt="${name}">
         </a>
-        <div><p>${p.name}</p></div>
+        <div><p>${name}</p></div>
       </span>`;
-    div.innerHTML ? (div.innerHTML += span) : (div.innerHTML = span);
-  });
+      })
+      .join("");
+  } catch (err) {
+    console.error("Failed to load playlists:", err);
+    div.innerHTML = `<p class="playlists-empty">Playlists are unavailable right now.</p>`;
+  }
 };
 displayPlaylists();
 
