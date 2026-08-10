@@ -1,1 +1,2 @@
-# [briantu.tech](https://briantu.tech/) (v2)
+# [briantu.tech](https://briantu.tech/)
+check me out
