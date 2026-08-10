@@ -33,6 +33,9 @@ p {
   font-size: small;
   margin: 0;
 }
+.intro {
+  margin-bottom: 16px;
+}
 
 .hidden {
   opacity: 0;
@@ -93,11 +96,16 @@ p {
   border-radius: 12px;
   transition: transform 0.5s ease-in-out;
 }
-.navbar a {
+.navbar button {
   display: inline-block;
   width: 20%;
   text-align: center;
   cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
 }
 
 #sections {
@@ -116,6 +124,9 @@ p {
   filter: blur(0);
   transform: translateX(0);
   transition: all 1s;
+}
+.projects-viewport {
+  position: relative;
 }
 .projects-wrapper {
   overflow: auto;
@@ -180,6 +191,14 @@ p {
   opacity: 0;
   transition: 0.5s ease;
 }
+#leftarrow,
+#rightarrow {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+}
 #leftarrow {
   position: absolute;
   top: calc(50% - 6px);
@@ -217,6 +236,9 @@ p {
 }
 .playlists-wrapper {
   margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #playlists {
   width: 160px;
@@ -309,7 +331,7 @@ p {
   .underline {
     width: 30%;
   }
-  .navbar a {
+  .navbar button {
     width: 30%;
   }
   #leftarrow {
