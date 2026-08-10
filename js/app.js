@@ -1,5 +1,5 @@
 import { Application } from "https://unpkg.com/@splinetool/runtime@0.9.210/build/runtime.js";
-import { getPlaylists } from "./spotify.js";
+import { getTopTracks } from "./spotify.js";
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -20,51 +20,65 @@ if (canvas) {
     .catch((err) => console.error("Spline load failed:", err));
 }
 
-const displayPlaylists = async () => {
-  const div = document.getElementById("playlists");
+const displayTopTracks = async () => {
+  const div = document.getElementById("top-tracks");
   if (!div) return;
   try {
-    const playlists = await getPlaylists();
-    if (!playlists.length) {
-      div.innerHTML = `<p class="playlists-empty">No playlists to show right now.</p>`;
+    const tracks = await getTopTracks();
+    if (!tracks.length) {
+      div.innerHTML = `<p class="tracks-empty">No tracks to show right now.</p>`;
       return;
     }
-    // Build nodes via the DOM API so playlist fields are treated as text/attributes,
+    // Build nodes via the DOM API so track fields are treated as text/attributes,
     // never parsed as HTML.
     div.replaceChildren(
-      ...playlists.map((p, i) => {
-        const name = p.name ?? "";
-        const url = p.url ?? "#";
-        const image = p.image ?? "";
+      ...tracks.map((t, i) => {
+        const rank = t.rank ?? i + 1;
+        const name = t.name ?? "";
+        const artists = t.artists ?? "";
+        const album = t.album ?? "";
+        const url = t.url ?? "#";
+        const image = t.image ?? "";
 
-        const span = document.createElement("span");
-        span.style.setProperty("--i", i);
+        const row = document.createElement("a");
+        row.className = "track";
+        row.href = url;
+        row.target = "_blank";
+        row.rel = "noopener";
+        row.style.setProperty("--i", i);
 
-        const anchor = document.createElement("a");
-        anchor.href = url;
-        anchor.target = "_blank";
-        anchor.rel = "noopener";
+        const rankEl = document.createElement("span");
+        rankEl.className = "track-rank";
+        rankEl.textContent = rank;
 
         const img = document.createElement("img");
+        img.className = "track-art";
         img.src = image;
-        img.alt = name;
-        anchor.appendChild(img);
+        img.alt = album;
+        img.loading = "lazy";
 
-        const label = document.createElement("div");
-        const caption = document.createElement("p");
-        caption.textContent = name;
-        label.appendChild(caption);
+        const meta = document.createElement("span");
+        meta.className = "track-meta";
 
-        span.append(anchor, label);
-        return span;
+        const nameEl = document.createElement("span");
+        nameEl.className = "track-name";
+        nameEl.textContent = name;
+
+        const artistEl = document.createElement("span");
+        artistEl.className = "track-artist";
+        artistEl.textContent = artists;
+
+        meta.append(nameEl, artistEl);
+        row.append(rankEl, img, meta);
+        return row;
       })
     );
   } catch (err) {
-    console.error("Failed to load playlists:", err);
-    div.innerHTML = `<p class="playlists-empty">Playlists are unavailable right now.</p>`;
+    console.error("Failed to load top tracks:", err);
+    div.innerHTML = `<p class="tracks-empty">Tracks are unavailable right now.</p>`;
   }
 };
-displayPlaylists();
+displayTopTracks();
 
 // Reveal controls that start hidden in CSS; guard so a missing element can't
 // throw and abort the rest of the module.

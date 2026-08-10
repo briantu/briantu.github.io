@@ -123,7 +123,7 @@ p {
   opacity: 1;
   filter: blur(0);
   transform: translateX(0);
-  transition: all 1s;
+  transition: all 1.5s ease;
 }
 .projects-viewport {
   position: relative;
@@ -222,7 +222,7 @@ p {
   cursor: pointer;
 }
 
-/* playlists section */
+/* music section — top tracks */
 #music-section {
   position: absolute;
   top: 0;
@@ -231,64 +231,102 @@ p {
   visibility: hidden;
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(100%);
-  transition: all 1s;
+  transform: translateX(100vw);
+  transition: all 1.5s ease;
 }
-.playlists-wrapper {
-  margin-top: 80px;
+#music-section h3 {
+  margin-bottom: 16px;
+}
+#music-section .subtitle {
+  color: #a2af7e;
+  font-size: small;
+}
+.tracks-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+#top-tracks {
+  width: 100%;
+  max-height: 360px; /* fits within the 450px #sections; scrolls past ~8 rows */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-right: 6px;
+}
+.track {
+  display: flex;
   align-items: center;
+  gap: 12px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease-out;
+  opacity: 0; /* hidden until the music tab opens; revealed by the cascade below */
 }
-#playlists {
-  width: 160px;
-  height: 160px;
-  transform-style: preserve-3d;
-  animation: rotate 20s linear infinite;
-  animation-play-state: paused;
+#music-section.show-tracks .track {
+  animation: trackIn 0.5s ease-out both;
+  animation-delay: calc(0.6s + var(--i) * 0.12s);
 }
-@keyframes rotate {
-  0% {
-    transform: perspective(1000px) rotateY(0deg);
+@keyframes trackIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  100% {
-    transform: perspective(1000px) rotateY(360deg);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-#playlists span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transform-origin: center;
-  transform-style: preserve-3d;
-  transform: rotateY(calc(var(--i) * -40deg)) translateZ(350px);
-  transition: all 1s;
-  -webkit-box-reflect: below 0px
-    linear-gradient(transparent, transparent, #0002);
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    opacity: 1;
+  }
+  #music-section.show-tracks .track {
+    animation: none;
+  }
 }
-#playlists span:hover {
-  top: -15px;
+.track:hover {
+  background-color: #ffffff14;
 }
-#playlists span:hover div {
-  opacity: 1;
+.track-rank {
+  flex: 0 0 22px;
+  text-align: right;
+  font-size: small;
+  color: #a2af7e;
+  font-variant-numeric: tabular-nums;
 }
-#playlists span img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.track-art {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
+  border-radius: 4px;
+  background-color: #1a1414; /* placeholder if a cover is missing */
 }
-#playlists span div {
-  position: absolute;
-  top: 168px;
-  width: 100%;
+.track-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* let long titles/artists ellipsize instead of overflowing */
+  line-height: 1.35;
+}
+.track-name {
+  font-size: small;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track-artist {
+  font-size: x-small;
+  color: #a2af7e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tracks-empty {
   text-align: center;
-  opacity: 0;
-  transition: all 1s;
+  color: #a2af7e;
 }
 
 /* interests section */
@@ -299,8 +337,8 @@ p {
   visibility: hidden;
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(100%);
-  transition: all 1s;
+  transform: translateX(100vw);
+  transition: all 1.5s ease;
 }
 #interests-section h3 {
   margin-bottom: 0;
@@ -341,18 +379,8 @@ p {
     display: none;
   }
 
-  .playlists-wrapper {
-    margin-top: 40px;
-  }
-  #playlists {
-    width: 125px;
-    height: 125px;
-  }
-  #playlists span {
-    transform: rotateY(calc(var(--i) * -40deg)) translateZ(225px);
-  }
-  #playlists span div {
-    top: 128px;
+  #top-tracks {
+    max-height: 320px;
   }
 }
 

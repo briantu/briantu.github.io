@@ -13,35 +13,39 @@ function ul(newIndex) {
   }px))`;
   underline.style.setProperty("--i", newIndex);
 
-  // handle section transitions
+  // handle section transitions. Offsets are in vw (viewport-relative) so sections
+  // start/leave at the actual screen edge, not the edge of the centered body column.
   if (curIndex < newIndex) {
-    sections[curIndex].style.transform = "translateX(-100%)";
+    sections[curIndex].style.transform = "translateX(-100vw)";
   } else {
-    sections[curIndex].style.transform = "translateX(100%)";
+    sections[curIndex].style.transform = "translateX(100vw)";
   }
   // if 0 -> 2 -> 1, 1 should come from left
   if (curIndex === 0 && newIndex === 2)
-    sections[1].style.transform = "translateX(-100%)";
+    sections[1].style.transform = "translateX(-100vw)";
   // if 2 -> 0 -> 1, 1 should come from right
   else if (curIndex === 2 && newIndex === 0)
-    sections[1].style.transform = "translateX(100%)";
+    sections[1].style.transform = "translateX(100vw)";
   sections[curIndex].style.visibility = "hidden";
   sections[curIndex].style.opacity = 0;
   sections[curIndex].style.filter = "blur(5px)";
   sections[curIndex].style["transition-delay"] = "0ms";
-  if (curIndex === 1)
-    document.getElementById("playlists").style["animation-play-state"] =
-      "paused";
-
-  if (newIndex === 1) {
-    document.getElementById("playlists").style["animation-play-state"] =
-      "running";
-  }
   sections[newIndex].style.visibility = "visible";
   sections[newIndex].style.opacity = 1;
   sections[newIndex].style.filter = "blur(0)";
   sections[newIndex].style.transform = "translateX(0)";
-  sections[newIndex].style["transition-delay"] = "800ms";
+  // Slide the incoming section in at the same time as the outgoing one leaves
+  // (both are absolutely positioned in the same spot, so they slide past each other).
+  sections[newIndex].style["transition-delay"] = "0ms";
+
+  // Cascade the track rows in each time the music tab opens. Reset on leave so
+  // the staggered fade-in replays on the next open (see .show-tracks in style.css).
+  if (curIndex === 1) sections[1].classList.remove("show-tracks");
+  if (newIndex === 1) {
+    sections[1].classList.remove("show-tracks");
+    void sections[1].offsetWidth; // force reflow so the animation restarts
+    sections[1].classList.add("show-tracks");
+  }
 }
 
 function fixdelay(index) {
