@@ -23,7 +23,11 @@ body {
   font-family: "AdobeMyungjo", sans-serif;
   max-width: var(--body-width);
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 16px 24px; /* 24px = webring's fixed offset from the bottom */
+  min-height: 100dvh;
+  box-sizing: border-box; /* keep padding inside 100dvh so there's no overflow */
+  display: flex;
+  flex-direction: column;
   background-color: #080404;
   color: #f2f2f2;
   overflow-x: hidden;
@@ -110,7 +114,8 @@ p {
 
 #sections {
   position: relative;
-  height: 450px;
+  flex: 1 1 auto; /* grow to fill leftover viewport height */
+  min-height: 450px;
   /* border-style: solid; */
 }
 /* projects section */
@@ -226,8 +231,11 @@ p {
 #music-section {
   position: absolute;
   top: 0;
+  bottom: 0; /* fill #sections so the list can grow with the viewport */
   left: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   visibility: hidden;
   opacity: 0;
   filter: blur(5px);
@@ -244,10 +252,12 @@ p {
 .tracks-wrapper {
   display: flex;
   justify-content: flex-start;
+  flex: 1 1 auto;
+  min-height: 0; /* allow the scroll area to shrink/grow within the flex column */
 }
 #top-tracks {
   width: 100%;
-  max-height: 360px; /* fits within the 450px #sections; scrolls past ~8 rows */
+  max-height: 100%; /* fills the section; scrolls when the list is longer */
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -380,7 +390,7 @@ p {
   }
 
   #top-tracks {
-    max-height: 320px;
+    max-height: 100%;
   }
 }
 
